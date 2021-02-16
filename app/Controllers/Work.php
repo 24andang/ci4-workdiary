@@ -71,13 +71,13 @@ class Work extends BaseController
     public function updatethis($id)
     {
         $data = [
-            'id'         => $id,
+            // 'id'         => $id,
             'kegiatan'   => $this->request->getVar('kegiatan'),
             'tanggal'    => $this->request->getVar('tanggal'),
-            'Keterangan' => $this->request->getVar('keterangan')
+            'keterangan' => $this->request->getVar('keterangan')
         ];
 
-        $this->workModel->save($data);
+        $this->workModel->update($id, $data);
 
         return redirect()->to('/work/index');
     }
